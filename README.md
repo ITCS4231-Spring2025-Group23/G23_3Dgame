@@ -8,7 +8,7 @@
 ---
 
 ## Project Overview
-This repository contains the development work for **Homework #3** of the ITCS 4231/5231 course. Over the semester, we are creating a 3D game prototype in Unity that demonstrates a fully functional play experience, offering an idea of what a completed game would be like.
+This repository contains the development work for our game project requirement of the ITCS 4231/5231 course. Over the semester, we are creating a 3D game prototype in Unity that demonstrates a fully functional play experience, offering an idea of what a completed game would be like.
 
 ### What is a Game Prototype?
 A game prototype provides a **complete play experience** without the overall content of a completed game.  
