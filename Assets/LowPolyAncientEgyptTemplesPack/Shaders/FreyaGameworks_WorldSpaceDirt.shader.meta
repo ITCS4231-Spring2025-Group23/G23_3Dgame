@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 75e63da3ae7b67045ae2ac34c42ab188
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134389
+  packageName: Low Poly Ancient Egypt Temples Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolyAncientEgyptTemplesPack/Shaders/FreyaGameworks_WorldSpaceDirt.shader
+  uploadId: 281741
