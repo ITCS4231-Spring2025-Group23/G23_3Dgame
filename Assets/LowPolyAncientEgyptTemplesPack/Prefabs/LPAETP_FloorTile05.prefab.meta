@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 067a367bf98512343a791b6985e13718
+timeCreated: 1543947219
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134389
+  packageName: Low Poly Ancient Egypt Temples Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolyAncientEgyptTemplesPack/Prefabs/LPAETP_FloorTile05.prefab
+  uploadId: 281741

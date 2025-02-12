@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a864228ebb47fe64c8098df5df7f98ab
+timeCreated: 1543947247
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134389
+  packageName: Low Poly Ancient Egypt Temples Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolyAncientEgyptTemplesPack/Prefabs/LPAETP_Wall01.prefab
+  uploadId: 281741
