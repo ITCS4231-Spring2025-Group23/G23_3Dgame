@@ -7,6 +7,8 @@ TagManager:
   - Reflect
   - Refract
   - Mirror
+  - DoorSwitch
+  - BridgeSwitch
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Background
   - 
   - 
   - 

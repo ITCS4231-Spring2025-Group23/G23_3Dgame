@@ -12,6 +12,7 @@ public class LaserBeam
         {"Air", 1.0f},
         {"Glass", 1.5f}
     };
+    public static bool door_active = false;
 
     public LaserBeam(Vector3 pos, Vector3 dir, Material material) {
         this.laser = new LineRenderer();
@@ -36,7 +37,7 @@ public class LaserBeam
         Ray ray = new Ray(pos, dir);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 30, 1)) {
+        if (Physics.Raycast(ray, out hit, 50, 1)) {
             CheckHit(hit, dir, laser);
         }
         else {
@@ -60,11 +61,14 @@ public class LaserBeam
             Vector3 pos = hitInfo.point;
             Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
 
+            door_active = false;
+
             CastRay(pos, dir, laser);
         }
         else if (hitInfo.collider.CompareTag("Refract")) {
             Vector3 pos = hitInfo.point;
             laserIndices.Add(pos);
+            door_active = false;
 
             Vector3 newPos1 = new Vector3(Mathf.Abs(direction.x) / (direction.x + 0.0001f) * 0.0001f + pos.x, Mathf.Abs(direction.y)/ (direction.y + 0.0001f) * 0.0001f + pos.y, Mathf.Abs(direction.z)/ (direction.z + 0.0001f) * 0.0001f + pos.z);
 
@@ -95,8 +99,14 @@ public class LaserBeam
             Vector3 refractedVector2 = Refract(n2, n1, -hit2.normal, refractedVector);
             CastRay(hit2.point, refractedVector2, laser);
         }
+        else if (hitInfo.collider.CompareTag("DoorSwitch")) {
+            laserIndices.Add(hitInfo.point);
+            door_active = true;
+            UpdateLaser();
+        }
         else {
             laserIndices.Add(hitInfo.point);
+            door_active = false;
             UpdateLaser();
         }
     }
