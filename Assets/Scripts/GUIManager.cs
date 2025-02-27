@@ -21,13 +21,17 @@ public class GUIManager : MonoBehaviour
         pause_menu.SetActive(false);
     }
 
-    void Update()
-    {
-        if (!PauseManager.instance.isPaused) {
-            PauseManager.instance.PauseGame();
+    void Update() {
+        //Check for input
+        if (Input.GetKeyDown(KeyCode.P)) {
+            if (!PauseManager.isPaused) {
+                PauseManager.instance.PauseGame();
+            }
+            else {
+                PauseManager.instance.UnPauseGame();
+            }
         }
-        else {
-            PauseManager.instance.UnPauseGame();
-        }
+
+        
     }
 }
