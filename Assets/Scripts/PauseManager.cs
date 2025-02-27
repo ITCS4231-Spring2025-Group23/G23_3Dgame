@@ -1,12 +1,16 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
     public static PauseManager instance;
+    PlayerMovement playerMovementScript;
+    [SerializeField] GameObject player;
     [SerializeField] Button resume_button;
     [SerializeField] Button exit_button;
-    public bool isPaused = false;
+    public static bool isPaused = false;
 
     void Awake() {
         if (instance == null) {
@@ -16,20 +20,30 @@ public class PauseManager : MonoBehaviour
         else {
             Destroy(gameObject);
         }
+        playerMovementScript = player.GetComponent<PlayerMovement>();
     }
 
     public void PauseGame() {
-        Time.timeScale = 1.0f;
-        isPaused = false;
-    
-        //Connect with InputManager to change action map back to player controls
+        isPaused = true;
+        gameObject.SetActive(true);
+        PlayerMovement.canMove = false;
+        playerMovementScript.enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void UnPauseGame() {
-        Time.timeScale = 0.0f;
-        isPaused = true;
+        isPaused = false;
+        gameObject.SetActive(false);
+        PlayerMovement.canMove = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
-        //Connect with InputManager to change action map back to UI
+    //Might change to return to main menu
+    public void OnExit() {
+        Debug.Log("Pressed");
+        Application.Quit();
     }
 
 }
