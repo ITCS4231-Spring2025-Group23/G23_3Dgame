@@ -15,6 +15,7 @@ public class BridgeOpener : MonoBehaviour
     {
         if (other.CompareTag("Mirror")) {
             bridgeAnimator.SetTrigger("Open");
+            // pressed = true;
             Debug.Log("Opened");
         }
     }
@@ -23,5 +24,6 @@ public class BridgeOpener : MonoBehaviour
     {
         bridgeAnimator.SetTrigger("Closed");
         Debug.Log("Closed");
+        // pressed = false;
     }
 }
