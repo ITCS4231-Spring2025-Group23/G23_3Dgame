@@ -2129,6 +2129,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4461294250437756, guid: d3b01743473812d4bb30e9588523b2a1, type: 3}
   m_PrefabInstance: {fileID: 340234559}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &355781427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725399983868327726, guid: 4ec140184c0bd644896401ceb04db6d6, type: 3}
+  m_PrefabInstance: {fileID: 428548038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &356409052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2919,6 +2924,10 @@ PrefabInstance:
     - target: {fileID: 6932196250999939676, guid: 4ec140184c0bd644896401ceb04db6d6, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932196250999939676, guid: 4ec140184c0bd644896401ceb04db6d6, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6962431805570535517, guid: 4ec140184c0bd644896401ceb04db6d6, type: 3}
       propertyPath: m_Layer
@@ -9887,7 +9896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6426c6a186716554692c5a204b8a1f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 355781427}
   resume_button: {fileID: 1430691470}
   exit_button: {fileID: 63097268}
 --- !u!114 &1556874947
