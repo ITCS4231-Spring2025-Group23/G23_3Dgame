@@ -23,6 +23,7 @@ public class PauseManager : MonoBehaviour
         playerMovementScript = player.GetComponent<PlayerMovement>();
     }
 
+    //Might be able to get rid of changing "canMove"
     public void PauseGame() {
         isPaused = true;
         gameObject.SetActive(true);
@@ -36,13 +37,14 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
         gameObject.SetActive(false);
         PlayerMovement.canMove = true;
+        playerMovementScript.enabled = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     //Might change to return to main menu
     public void OnExit() {
-        Debug.Log("Pressed");
+        Debug.Log("Exit");
         Application.Quit();
     }
 

@@ -3,7 +3,6 @@ using UnityEngine;
 public class BridgeOpener : MonoBehaviour
 {
     Animator bridgeAnimator;
-    bool pressed = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,15 +14,15 @@ public class BridgeOpener : MonoBehaviour
     {
         if (other.CompareTag("Mirror")) {
             bridgeAnimator.SetTrigger("Open");
-            // pressed = true;
-            Debug.Log("Opened");
+            Debug.Log("Open");
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        bridgeAnimator.SetTrigger("Closed");
-        Debug.Log("Closed");
-        // pressed = false;
+        if (other.CompareTag("Mirror")) {
+            bridgeAnimator.SetTrigger("Closed");
+            Debug.Log("Closed");
+        }
     }
 }
