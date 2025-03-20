@@ -9,6 +9,7 @@ TagManager:
   - Mirror
   - DoorSwitch
   - BridgeSwitch
+  - NextLevel
   layers:
   - Default
   - TransparentFX

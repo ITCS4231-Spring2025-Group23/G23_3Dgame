@@ -13,6 +13,7 @@ public class LaserBeam
         {"Glass", 1.5f}
     };
     public static bool door_active = false;
+    public LayerMask laserLayer = 1 << LayerMask.NameToLayer("Interactable") | 1 << LayerMask.NameToLayer("Default");
 
     public LaserBeam(Vector3 pos, Vector3 dir, Material material) {
         this.laser = new LineRenderer();
@@ -37,7 +38,7 @@ public class LaserBeam
         Ray ray = new Ray(pos, dir);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 50, 1)) {
+        if (Physics.Raycast(ray, out hit, 50, laserLayer)) {
             CheckHit(hit, dir, laser);
         }
         else {
@@ -62,7 +63,7 @@ public class LaserBeam
             Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
 
             door_active = false;
-
+            Debug.Log("Mirror");
             CastRay(pos, dir, laser);
         }
         else if (hitInfo.collider.CompareTag("Refract")) {
@@ -90,7 +91,7 @@ public class LaserBeam
             Ray ray2 = new Ray(newRayStartPos, -refractedVector);
             RaycastHit hit2;
 
-            if (Physics.Raycast(ray2, out hit2, 1.6f, 1)) {
+            if (Physics.Raycast(ray2, out hit2, 1.6f, laserLayer)) {
                 laserIndices.Add(hit2.point);
             }
             

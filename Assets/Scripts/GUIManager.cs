@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 //Controls which GUI elements are showing
 public class GUIManager : MonoBehaviour
 {
     public static GUIManager instance;
     [SerializeField] GameObject pause_menu;
+    // [SerializeField] Animator transition;
 
     void Awake() {
         if (instance == null) {
@@ -31,7 +34,17 @@ public class GUIManager : MonoBehaviour
                 PauseManager.instance.UnPauseGame();
             }
         }
-
-        
     }
+
+    // public void LoadNextLevel() {
+    //     StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    // }
+
+    // IEnumerator LoadLevel(int levelIndex) {
+    //     transition.SetTrigger("Start");
+
+    //     yield return new WaitForSeconds(1);
+
+    //     SceneManager.LoadScene(levelIndex);
+    // }
 }

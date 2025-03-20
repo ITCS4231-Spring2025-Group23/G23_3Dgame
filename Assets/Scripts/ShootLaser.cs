@@ -4,8 +4,7 @@ public class Laser : MonoBehaviour
 {
     public Material material;
     LaserBeam beam;
-
-
+    
     // Update is called once per frame
     void Update()
     {

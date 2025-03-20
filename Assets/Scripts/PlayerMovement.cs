@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement instance;
     public Camera playerCamera;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
@@ -21,6 +22,22 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
 
     public static bool canMove = true;
+
+    void Awake()
+    {
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else {
+            Destroy(gameObject);
+        }
+        //Reset player position with new variables
+        Transform spawnPoint = GameObject.Find("SpawnPoint").transform;
+        Transform playerPos = GameObject.Find("Player1").transform;
+        playerPos.position = spawnPoint.position;
+        Debug.Log("Awake");
+    }
 
     void Start()
     {
