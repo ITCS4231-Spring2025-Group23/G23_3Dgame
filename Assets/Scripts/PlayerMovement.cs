@@ -36,14 +36,13 @@ public class PlayerMovement : MonoBehaviour
         Transform spawnPoint = GameObject.Find("SpawnPoint").transform;
         Transform playerPos = GameObject.Find("Player1").transform;
         playerPos.position = spawnPoint.position;
-        Debug.Log("Awake");
+        Debug.Log(spawnPoint.position);
     }
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void Update()

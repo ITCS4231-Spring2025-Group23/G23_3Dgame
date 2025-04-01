@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
@@ -12,12 +15,12 @@ public class SwitchOpener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(LaserBeam.door_active);
         if (LaserBeam.door_active && door.transform.position.y <= 12) {
             door.transform.Translate(Vector3.up * Time.deltaTime * opening_speed);
         }
         else if (!LaserBeam.door_active && door.transform.position.y >= 4) {
             door.transform.Translate(Vector3.down * Time.deltaTime * opening_speed);
         }
-
     }
 }

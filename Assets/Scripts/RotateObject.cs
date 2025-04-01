@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -6,6 +7,9 @@ public class RotateObject : MonoBehaviour, IInteractable
 {
     public Vector2 trackedRotation = Vector2.zero;
     [SerializeField] float clampValue = 135f;
+    public string interact_text = "Rotate Object with 'J' and 'K'";
+
+
     public void Interact() {
         if (Input.GetKey(KeyCode.J)) {
             //Precise Rotation Control
@@ -26,5 +30,9 @@ public class RotateObject : MonoBehaviour, IInteractable
         }
         trackedRotation.y = Mathf.Clamp(trackedRotation.y, -clampValue, clampValue);
         transform.rotation = Quaternion.Euler(0f, trackedRotation.y, 0f);
+    }
+
+    public string GetInteractionText() {
+        return interact_text;
     }
 }
