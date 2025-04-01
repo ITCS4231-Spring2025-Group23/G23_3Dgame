@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8905018397231915746
+--- !u!1 &6075494506013708047
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4258343291663599980}
-  - component: {fileID: 2582279036124461872}
-  - component: {fileID: 7899700884641536360}
-  - component: {fileID: 4028498624493620369}
-  - component: {fileID: 7167421346776896217}
-  - component: {fileID: 7018940344296713451}
+  - component: {fileID: 6689076560442614311}
+  - component: {fileID: 6045445177270247839}
+  - component: {fileID: 3611119923625789902}
+  - component: {fileID: 6914273168730057448}
+  - component: {fileID: 2188057393761858535}
+  - component: {fileID: 3146280230634161796}
   m_Layer: 3
-  m_Name: Reflect
-  m_TagString: Mirror
+  m_Name: LaserPointer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4258343291663599980
+--- !u!4 &6689076560442614311
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8905018397231915746}
+  m_GameObject: {fileID: 6075494506013708047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.75, y: 0.307, z: -0}
-  m_LocalScale: {x: 1.6293, y: 1.6293, z: 1.6293}
+  m_LocalPosition: {x: 5, y: 0.83, z: -10.560001}
+  m_LocalScale: {x: 0.280224, y: 0.25298, z: 0.20767}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2582279036124461872
+--- !u!33 &6045445177270247839
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8905018397231915746}
+  m_GameObject: {fileID: 6075494506013708047}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7899700884641536360
+--- !u!23 &3611119923625789902
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8905018397231915746}
+  m_GameObject: {fileID: 6075494506013708047}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9c9b7cb7be8b5e4aa3018e0fd71fb70, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,13 +89,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4028498624493620369
+--- !u!65 &6914273168730057448
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8905018397231915746}
+  m_GameObject: {fileID: 6075494506013708047}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -110,44 +110,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7167421346776896217
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8905018397231915746}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &7018940344296713451
+--- !u!114 &2188057393761858535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8905018397231915746}
+  m_GameObject: {fileID: 6075494506013708047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f86048f83ef264c9d3ebca0d26809b, type: 3}
+  m_Script: {fileID: 11500000, guid: 432a63aca8ce89e4a8ef270838025fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  interact_text: Press E to Hold Object
+  material: {fileID: 2100000, guid: b94d8d2e1e89ffd4d93c06e306b33d44, type: 2}
+--- !u!114 &3146280230634161796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075494506013708047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6316dc01297156a4da2fce66d72f6ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackedRotation: {x: 0, y: 0}
+  clampValue: 135
+  interact_text: Rotate Object with 'J' and 'K'

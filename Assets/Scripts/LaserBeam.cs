@@ -1,6 +1,12 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
+
+
 //using System.Numerics;
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
+using UnityEngine.UIElements;
 
 public class LaserBeam
 {
@@ -19,6 +25,9 @@ public class LaserBeam
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();
         this.laserObj.name = "Laser Beam";
+        // this.laserObj.AddComponent<CapsuleCollider>();
+        // Collider collider = this.laserObj.GetComponent<CapsuleCollider>();
+        // collider.isTrigger = true;
         this.pos = pos;
         this.dir = dir;
 
@@ -61,9 +70,8 @@ public class LaserBeam
         if (hitInfo.collider.CompareTag("Mirror")) {
             Vector3 pos = hitInfo.point;
             Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
-
+            
             door_active = false;
-            Debug.Log("Mirror");
             CastRay(pos, dir, laser);
         }
         else if (hitInfo.collider.CompareTag("Refract")) {
@@ -118,5 +126,4 @@ public class LaserBeam
         Vector3 refractedVector = (n1/n2 * Vector3.Cross(norm, Vector3.Cross(-norm, incident)) - norm * Mathf.Sqrt(1 - Vector3.Dot(Vector3.Cross(norm, incident) * (n1/n2 * n1/n2), Vector3.Cross(norm, incident)))).normalized;
         return refractedVector;
     }
-
 }
