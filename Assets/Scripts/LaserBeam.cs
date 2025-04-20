@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
-
-
 //using System.Numerics;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
@@ -12,22 +10,21 @@ public class LaserBeam
 {
     Vector3 pos, dir;
     public GameObject laserObj;
+    int laserPointerID;
     LineRenderer laser;
     List<Vector3> laserIndices = new List<Vector3>();
+    SwitchOpener door_script;
     Dictionary<string, float> refractiveMaterials = new Dictionary<string, float>() {
         {"Air", 1.0f},
         {"Glass", 1.5f}
     };
-    public static bool door_active = false;
     public LayerMask laserLayer = 1 << LayerMask.NameToLayer("Interactable") | 1 << LayerMask.NameToLayer("Default");
 
-    public LaserBeam(Vector3 pos, Vector3 dir, Material material) {
+    public LaserBeam(Vector3 pos, Vector3 dir, Material material, int laserPointerID) {
+        this.laserPointerID = laserPointerID;
         this.laser = new LineRenderer();
         this.laserObj = new GameObject();
         this.laserObj.name = "Laser Beam";
-        // this.laserObj.AddComponent<CapsuleCollider>();
-        // Collider collider = this.laserObj.GetComponent<CapsuleCollider>();
-        // collider.isTrigger = true;
         this.pos = pos;
         this.dir = dir;
 
@@ -35,7 +32,7 @@ public class LaserBeam
         this.laser.startWidth = 0.1f;
         this.laser.endWidth = 0.1f;
         this.laser.material = material;
-        this.laser.startColor = Color.yellow;
+        this.laser.startColor = Color.yellow;   
         this.laser.endColor = Color.yellow;
 
         CastRay(pos, dir, laser);
@@ -70,14 +67,11 @@ public class LaserBeam
         if (hitInfo.collider.CompareTag("Mirror")) {
             Vector3 pos = hitInfo.point;
             Vector3 dir = Vector3.Reflect(direction, hitInfo.normal);
-            
-            door_active = false;
             CastRay(pos, dir, laser);
         }
         else if (hitInfo.collider.CompareTag("Refract")) {
             Vector3 pos = hitInfo.point;
             laserIndices.Add(pos);
-            door_active = false;
 
             Vector3 newPos1 = new Vector3(Mathf.Abs(direction.x) / (direction.x + 0.0001f) * 0.0001f + pos.x, Mathf.Abs(direction.y)/ (direction.y + 0.0001f) * 0.0001f + pos.y, Mathf.Abs(direction.z)/ (direction.z + 0.0001f) * 0.0001f + pos.z);
 
@@ -102,7 +96,7 @@ public class LaserBeam
             if (Physics.Raycast(ray2, out hit2, 1.6f, laserLayer)) {
                 laserIndices.Add(hit2.point);
             }
-            
+
             UpdateLaser();
 
             Vector3 refractedVector2 = Refract(n2, n1, -hit2.normal, refractedVector);
@@ -110,12 +104,15 @@ public class LaserBeam
         }
         else if (hitInfo.collider.CompareTag("DoorSwitch")) {
             laserIndices.Add(hitInfo.point);
-            door_active = true;
+            door_script = hitInfo.collider.gameObject.GetComponent<SwitchOpener>();
+            if (laserPointerID == door_script.switchID) {
+                door_script.activateSwitch(hitInfo.collider.gameObject);
+            }
             UpdateLaser();
         }
         else {
             laserIndices.Add(hitInfo.point);
-            door_active = false;
+            SwitchOpener.deactivateSwitch();
             UpdateLaser();
         }
     }

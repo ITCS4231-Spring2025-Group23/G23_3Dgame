@@ -12,7 +12,7 @@ public class BridgeOpener : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Mirror")) {
+        if (other.CompareTag("Mirror") || other.CompareTag("Refract")) {
             bridgeAnimator.SetTrigger("Open");
             Debug.Log("Open");
         }
@@ -20,7 +20,7 @@ public class BridgeOpener : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Mirror")) {
+        if (other.CompareTag("Mirror") || other.CompareTag("Refract")) {
             bridgeAnimator.SetTrigger("Closed");
             Debug.Log("Closed");
         }
