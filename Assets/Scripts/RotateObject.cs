@@ -8,7 +8,16 @@ public class RotateObject : MonoBehaviour, IInteractable
     public Vector2 trackedRotation = Vector2.zero;
     [SerializeField] float clampValue = 135f;
     public string interact_text = "Rotate Object with 'J' and 'K'";
+    private float originalRot;
 
+    void Start() {
+        if (transform.eulerAngles.y <= 180f) {
+            originalRot = transform.eulerAngles.y;
+        }
+        else {
+            originalRot = transform.eulerAngles.y - 360f;
+        }
+    }
 
     public void Interact() {
         if (Input.GetKey(KeyCode.J)) {
@@ -29,7 +38,7 @@ public class RotateObject : MonoBehaviour, IInteractable
             }
         }
         trackedRotation.y = Mathf.Clamp(trackedRotation.y, -clampValue, clampValue);
-        transform.rotation = Quaternion.Euler(0f, trackedRotation.y, 0f);
+        transform.rotation = Quaternion.Euler(0f, originalRot + trackedRotation.y, 0f);
     }
 
     public string GetInteractionText() {
