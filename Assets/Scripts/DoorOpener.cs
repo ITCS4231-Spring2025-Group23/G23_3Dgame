@@ -6,19 +6,23 @@ public class SwitchOpener : MonoBehaviour
 {
     float opening_speed = 2;
     [SerializeField] GameObject door;
+    [SerializeField] Material activeMaterial;
+    [SerializeField] Material inactiveMaterial;
+    MeshRenderer renderer;
     public int switchID;
     public static List<GameObject> activatedSwitches = new List<GameObject>();
 
 
+    void Start() {
+        renderer = GetComponent<MeshRenderer>();
+        if (renderer != null) {
+            inactiveMaterial = renderer.material;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        // if (LaserBeam.door_active && door.transform.position.y <= 12) {
-        //     door.transform.Translate(Vector3.up * Time.deltaTime * opening_speed);
-        // }
-        // else if (!LaserBeam.door_active && door.transform.position.y >= 4) {
-        //     door.transform.Translate(Vector3.down * Time.deltaTime * opening_speed);
-        // }
         if (activatedSwitches.Count == 2 && door.transform.position.y <= 12) {
             door.transform.Translate(Vector3.up * Time.deltaTime * opening_speed);
         }
@@ -35,6 +39,7 @@ public class SwitchOpener : MonoBehaviour
                     return;
                 }
             }
+            renderer.material = activeMaterial;
             activatedSwitches.Add(switchOpener);
         }
     }
