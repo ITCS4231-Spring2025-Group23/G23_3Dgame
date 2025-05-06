@@ -1,4 +1,4 @@
-# Advanced Game Design and Development: Game Prototype **Anubis' ---**
+# Advanced Game Design and Development: Game Prototype **Anubis' Puzzles**
 
 ## Course Information
 **Course**: ITCS 4231/5231 – Advanced Game Design and Development  
