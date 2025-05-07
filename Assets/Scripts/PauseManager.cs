@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
@@ -48,4 +49,9 @@ public class PauseManager : MonoBehaviour
         Application.Quit();
     }
 
+
+    public void RestartLevel() {
+        UnPauseGame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
