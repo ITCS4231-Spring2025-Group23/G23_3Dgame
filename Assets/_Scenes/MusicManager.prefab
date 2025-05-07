@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2435977406502152461}
   - component: {fileID: 522416111363138224}
   - component: {fileID: 2703508743496578844}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: MusicManager
   m_TagString: Music
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021846144756287431}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1d5bb7fde686de64592d85931823f99e, type: 3}
