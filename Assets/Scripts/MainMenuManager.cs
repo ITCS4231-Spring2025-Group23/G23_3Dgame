@@ -13,8 +13,4 @@ public class MainMenuManager : MonoBehaviour
         Debug.Log("Quit Game");
         Application.Quit();
     }
-
-    public void RestartGame() {
-        SceneManager.LoadScene(1);
-    }
 }
