@@ -10,6 +10,7 @@ TagManager:
   - DoorSwitch
   - BridgeSwitch
   - NextLevel
+  - Music
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Background
-  - 
+  - AUDIO
   - 
   - 
   - 
