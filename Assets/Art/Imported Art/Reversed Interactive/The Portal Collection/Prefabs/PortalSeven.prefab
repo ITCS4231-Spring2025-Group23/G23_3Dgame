@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 616429894184291073}
+  - component: {fileID: 154965989714028120}
   - component: {fileID: 3543396468784922281}
-  - component: {fileID: 535165700873788942}
   m_Layer: 0
   m_Name: PortalSeven
   m_TagString: Untagged
@@ -35,6 +35,19 @@ Transform:
   - {fileID: 3164685087477160212}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &154965989714028120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271956597385269691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a2968ce2cff004692d76785392d0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelLoadScript: {fileID: 0}
 --- !u!65 &3543396468784922281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54,21 +67,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0064821, y: 3.140274, z: 2.8086655}
-  m_Center: {x: 1.5073075, y: 1.0701373, z: 0.009366989}
---- !u!114 &535165700873788942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271956597385269691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c144a17f1368b2d4ead8590dcac39c30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  m_Size: {x: 1.8633105, y: 3.140274, z: 1}
+  m_Center: {x: 0.43165535, y: 1.0701373, z: 9.712342e-16}
 --- !u!1 &3152435818225156287
 GameObject:
   m_ObjectHideFlags: 0
