@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "G23_3Dgame.sln"
+    "dotnet.defaultSolution": "cloned_copy2.sln"
 }
