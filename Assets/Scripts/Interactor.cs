@@ -18,7 +18,7 @@ public class Interactor : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate() {
         Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
-
+       
         if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange, interactableLayer)) {
             CursorManager.instance.CursorSelect();
             
@@ -39,7 +39,7 @@ public class Interactor : MonoBehaviour
             CursorManager.instance.CursorDeselect();
             CursorManager.instance.displayText("");
         }
-
+      
         // if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.K)) {
         //     if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange, interactableLayer)) {
         //         if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj)) {
