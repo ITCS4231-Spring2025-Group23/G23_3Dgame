@@ -34,6 +34,11 @@ public class GUIManager : MonoBehaviour
                 PauseManager.instance.UnPauseGame();
             }
         }
+
+        if (SceneManager.GetActiveScene().name == "Ending") {
+            Destroy(gameObject);
+            Destroy(PlayerMovement.instance.gameObject);
+        }
     }
 
     // public void LoadNextLevel() {

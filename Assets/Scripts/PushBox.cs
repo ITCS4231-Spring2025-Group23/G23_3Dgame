@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PushBox1 : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameObject player;
+    private GameObject player;
     private Transform box_parent;
     Rigidbody rb;
     public string interact_text = "Press E to Hold Object";
@@ -17,6 +17,7 @@ public class PushBox1 : MonoBehaviour, IInteractable
         rb = gameObject.GetComponent<Rigidbody>();
         box_parent = transform.parent;
         originalYPos = transform.position.y;
+        player = GameObject.Find("Player1");
     }
 
     public void Interact() {

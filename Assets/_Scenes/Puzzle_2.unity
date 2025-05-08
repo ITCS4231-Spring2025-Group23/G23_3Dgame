@@ -4268,6 +4268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pause_menu: {fileID: 1941206567}
+  end_screen: {fileID: 0}
 --- !u!4 &151757458
 Transform:
   m_ObjectHideFlags: 0
@@ -36055,7 +36056,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f86048f83ef264c9d3ebca0d26809b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8702267591682211703}
   interact_text: Press E to Hold Object
 --- !u!1001 &1336993007
 PrefabInstance:
